@@ -38,7 +38,7 @@ const Contact = () => {
           <div className="flex items-center justify-center gap-8">
             {/* Email */}
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:jittotp@gmail.com"
               className="group flex flex-col items-center gap-3 transition-all duration-300 hover:-translate-y-1"
               title="Send me an email"
             >
@@ -88,7 +88,7 @@ const Contact = () => {
 
             {/* GitHub */}
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/jitto21"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex flex-col items-center gap-3 transition-all duration-300 hover:-translate-y-1"

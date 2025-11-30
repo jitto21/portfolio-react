@@ -55,9 +55,7 @@ const About = () => {
                   <div className="w-full h-full flex items-center justify-center">
                     <div className="text-center">
                       <div className="text-6xl mb-4">👨‍💻</div>
-                      <p className="text-sm text-warm-textLight px-6">
-                        Replace with your photo
-                      </p>
+                      <img src="src/assets/portfolio-dp.jpg" alt="profile" />
                     </div>
                   </div>
                 </div>

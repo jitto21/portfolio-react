@@ -1,6 +1,7 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
+import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import { ThemeProvider } from './context/ThemeContext';
@@ -13,10 +14,11 @@ function App() {
         <main>
           <Hero />
           <About />
+          <Experience />
           <Projects />
           <Contact />
         </main>
-        <footer className="bg-warm-card py-12 border-t border-cream-200">
+        <footer className="bg-warm-card py-4 border-t border-cream-200">
           <div className="container mx-auto px-6">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <p className="text-warm-textLight text-sm">
