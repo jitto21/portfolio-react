@@ -4,16 +4,10 @@ const About = () => {
     { role: 'Front end developer', company: 'at Cognizant Technology Solutions', period: 'Dec 2019 - Oct 2022' },
   ];
 
-  const featured = [
-    { title: 'Dev Stack', value: 'ReactJS' },
-    { title: 'Information Arch', value: 'Gool knows what Im' },
-    { title: 'Q.A Interview', value: '28 Days of Web' },
-  ];
-
   return (
     <section id="about" className="min-h-screen flex items-center py-24 px-6">
       <div className="max-w-5xl mx-auto w-full">
-        <div className="bg-warm-card rounded-3xl p-12 md:p-16 card-shadow animate-slide-up">
+        <div className="bg-warm-card rounded-3xl p-8 md:p-16 card-shadow animate-slide-up">
           <div className="grid md:grid-cols-5 gap-12 items-start">
             {/* Left Content */}
             <div className="md:col-span-3 space-y-8">
@@ -37,7 +31,7 @@ const About = () => {
               </div>
 
               {/* Experience & Featured */}
-              <div className="grid grid-cols-2 gap-8 pt-4">
+              <div className="pt-4">
                 <div>
                   <h3 className="text-sm font-semibold text-warm-text mb-4">Work Experience</h3>
                   <div className="space-y-3">
@@ -46,18 +40,6 @@ const About = () => {
                         <div className="font-medium text-warm-text">{exp.role}</div>
                         <div className="text-xs">{exp.company}</div>
                         <div className="text-xs">{exp.period}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-sm font-semibold text-warm-text mb-4">Featured On</h3>
-                  <div className="space-y-3">
-                    {featured.map((item, index) => (
-                      <div key={index} className="text-sm">
-                        <div className="font-medium text-warm-text">{item.title}</div>
-                        <div className="text-xs text-warm-textLight">{item.value}</div>
                       </div>
                     ))}
                   </div>

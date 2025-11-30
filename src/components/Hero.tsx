@@ -5,7 +5,7 @@ const Hero = () => {
       className="min-h-screen flex items-center justify-center px-6 pt-24"
     >
       <div className="max-w-4xl mx-auto">
-        <div className="bg-warm-card rounded-3xl p-16 md:p-24 card-shadow animate-fade-in">
+        <div className="bg-warm-card rounded-3xl p-8 md:p-24 card-shadow animate-fade-in">
           <div className="text-center space-y-8">
             {/* Status indicator */}
             <div className="flex items-center justify-center gap-2 text-sm text-warm-textLight">

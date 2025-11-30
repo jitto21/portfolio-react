@@ -8,6 +8,7 @@ interface NavItem {
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState('home');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { isDark, toggleTheme } = useTheme();
 
   const navItems: NavItem[] = [
@@ -47,45 +48,129 @@ const Header = () => {
         top: offsetPosition,
         behavior: 'smooth',
       });
+
+      // Close mobile menu after navigation
+      setIsMobileMenuOpen(false);
     }
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm">
-      <nav className="container mx-auto px-8 py-6">
-        <div className="flex items-center justify-between">
-          {/* Left spacer for balance */}
-          <div className="w-10"></div>
+    <>
+      <header className="fixed top-0 left-0 right-0 z-50 bg-warm-bg/95 backdrop-blur-sm">
+        <nav className="container mx-auto px-6 py-4">
+          {/* Mobile layout - centered hamburger */}
+          <div className="sm:hidden">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 rounded-lg bg-warm-card hover:bg-cream-100 transition-colors duration-200"
+              aria-label="Toggle menu"
+            >
+              <svg
+                className="w-6 h-6 text-warm-text"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
 
-          {/* Center navigation */}
-          <ul className="flex items-center justify-center space-x-12">
-            {navItems.map((item) => (
-              <li key={item.id}>
-                <button
-                  onClick={() => scrollToSection(item.id)}
-                  className={`text-sm transition-all duration-200 ${
-                    activeSection === item.id
-                      ? 'text-warm-text font-semibold'
-                      : 'text-warm-textLight hover:text-warm-text'
-                  }`}
+          {/* Desktop layout */}
+          <div className="hidden sm:flex items-center justify-between">
+            {/* Left spacer for balance */}
+            <div className="w-10"></div>
+
+            {/* Center navigation */}
+            <ul className="flex items-center justify-center space-x-12">
+              {navItems.map((item) => (
+                <li key={item.id}>
+                  <button
+                    onClick={() => scrollToSection(item.id)}
+                    className={`text-sm transition-all duration-200 ${
+                      activeSection === item.id
+                        ? 'text-warm-text font-semibold'
+                        : 'text-warm-textLight hover:text-warm-text'
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+
+            {/* Right - Dark mode toggle */}
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg bg-warm-card hover:bg-cream-100 transition-colors duration-200"
+              aria-label="Toggle dark mode"
+              title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {isDark ? (
+                // Sun icon for light mode
+                <svg
+                  className="w-5 h-5 text-warm-text"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  {item.label}
-                </button>
-              </li>
-            ))}
-          </ul>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                  />
+                </svg>
+              ) : (
+                // Moon icon for dark mode
+                <svg
+                  className="w-5 h-5 text-warm-text"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
+        </nav>
+      </header>
 
-          {/* Right - Dark mode toggle */}
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-lg bg-warm-card hover:bg-cream-100 transition-colors duration-200"
-            aria-label="Toggle dark mode"
-            title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-          >
-            {isDark ? (
-              // Sun icon for light mode
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 sm:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+
+      {/* Mobile Menu Sidebar */}
+      <div
+        className={`fixed top-0 left-0 h-full w-64 bg-warm-card z-50 transform transition-transform duration-300 ease-in-out sm:hidden ${
+          isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
+        <div className="p-6">
+          {/* Close button */}
+          <div className="flex items-center justify-between mb-8">
+            <span className="text-xl font-bold text-warm-text">Menu</span>
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="p-2 rounded-lg hover:bg-cream-100 transition-colors"
+            >
               <svg
-                className="w-5 h-5 text-warm-text"
+                className="w-6 h-6 text-warm-text"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -94,29 +179,78 @@ const Header = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                  d="M6 18L18 6M6 6l12 12"
                 />
               </svg>
-            ) : (
-              // Moon icon for dark mode
-              <svg
-                className="w-5 h-5 text-warm-text"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                />
-              </svg>
-            )}
-          </button>
+            </button>
+          </div>
+
+          {/* Navigation items */}
+          <nav>
+            <ul className="space-y-2">
+              {navItems.map((item) => (
+                <li key={item.id}>
+                  <button
+                    onClick={() => scrollToSection(item.id)}
+                    className={`w-full text-left px-4 py-3 rounded-lg transition-colors duration-200 ${
+                      activeSection === item.id
+                        ? 'bg-cream-100 text-warm-text font-semibold'
+                        : 'text-warm-textLight hover:bg-cream-100 hover:text-warm-text'
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Theme toggle in mobile menu */}
+          <div className="mt-8 pt-8 border-t border-cream-200">
+            <button
+              onClick={() => {
+                toggleTheme();
+                setIsMobileMenuOpen(false);
+              }}
+              className="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-cream-100 transition-colors"
+            >
+              <span className="text-warm-textLight">
+                {isDark ? 'Light mode' : 'Dark mode'}
+              </span>
+              {isDark ? (
+                <svg
+                  className="w-5 h-5 text-warm-text"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  className="w-5 h-5 text-warm-text"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
-      </nav>
-    </header>
+      </div>
+    </>
   );
 };
 

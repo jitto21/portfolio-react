@@ -2,7 +2,7 @@ const Contact = () => {
   return (
     <section id="contact" className="min-h-screen flex items-center py-24 px-6">
       <div className="max-w-4xl mx-auto w-full">
-        <div className="bg-warm-card rounded-3xl p-12 md:p-16 card-shadow animate-fade-in">
+        <div className="bg-warm-card rounded-3xl p-8 md:p-16 card-shadow animate-fade-in">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-warm-text mb-4">
               Let's Connect

@@ -22,17 +22,6 @@ function App() {
               <p className="text-warm-textLight text-sm">
                 &copy; {new Date().getFullYear()} Jitto Thomas Palathra. All rights reserved.
               </p>
-              <div className="flex items-center gap-6">
-                <a href="#" className="text-warm-textLight hover:text-warm-text transition-colors text-sm">
-                  Twitter
-                </a>
-                <a href="https://www.linkedin.com/in/jitto21/" className="text-warm-textLight hover:text-warm-text transition-colors text-sm">
-                  LinkedIn
-                </a>
-                <a href="#" className="text-warm-textLight hover:text-warm-text transition-colors text-sm">
-                  GitHub
-                </a>
-              </div>
             </div>
           </div>
         </footer>
