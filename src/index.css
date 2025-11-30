@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #fbf6ef;
+    color: #1a1a1a;
+  }
+
+  .dark body {
+    background-color: #010409;
+    color: #f0f6fc;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, #1a1a1a, #7a6e5b);
+  }
+
+  .card-shadow {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .bg-warm-bg {
+    background-color: #fbf6ef;
+  }
+
+  .dark .bg-warm-bg {
+    background-color: #010409;
+  }
+
+  .bg-warm-card {
+    background-color: #FFFFFF;
+  }
+
+  .dark .bg-warm-card {
+    background-color: #0D1117;
+  }
+
+  .text-warm-text {
+    color: #1a1a1a;
+  }
+
+  .dark .text-warm-text {
+    color: #f0f6fc;
+  }
+
+  .text-warm-textLight {
+    color: #666666;
+  }
+
+  .dark .text-warm-textLight {
+    color: #8b949e;
+  }
+
+  .bg-warm-text {
+    background-color: #1a1a1a;
+  }
+
+  .dark .bg-warm-text {
+    background-color: #f0f6fc;
+  }
+
+  .text-warm-card {
+    color: #FFFFFF;
+  }
+
+  .dark .text-warm-card {
+    color: #0D1117;
+  }
+
+  .hover\:text-warm-text:hover {
+    color: #1a1a1a;
+  }
+
+  .hover\:bg-cream-800:hover {
+    background-color: #52493c;
+  }
+
+  .border-cream-200 {
+    border-color: #ebe3d7;
+  }
+
+  .dark .border-cream-200 {
+    border-color: #21262d;
+  }
+
+  .bg-cream-50 {
+    background-color: #faf8f5;
+  }
+
+  .dark .bg-cream-50 {
+    background-color: #161b22;
+  }
+
+  .bg-cream-100 {
+    background-color: #f5f1eb;
+  }
+
+  .dark .bg-cream-100 {
+    background-color: #21262d;
+  }
+
+  .hover\:bg-cream-100:hover {
+    background-color: #f5f1eb;
+  }
+
+  .dark .hover\:bg-cream-100:hover {
+    background-color: #21262d;
+  }
+
+  .hover\:bg-cream-200:hover {
+    background-color: #ebe3d7;
+  }
+
+  .dark .hover\:bg-cream-200:hover {
+    background-color: #30363d;
+  }
+
+  .group:hover .group-hover\:text-cream-700 {
+    color: #7a6e5b;
+  }
+
+  .group:hover .group-hover\:text-warm-text {
+    color: #1a1a1a;
+  }
+
+  .focus\:ring-cream-400:focus {
+    --tw-ring-color: #d6c7af;
+  }
+}
