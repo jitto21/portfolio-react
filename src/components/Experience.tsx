@@ -14,44 +14,47 @@ const Experience = () => {
       id: 1,
       company: 'Vrize',
       role: 'Senior Software Engineer',
-      period: 'Nov 2022 - Dec 2024',
-      description: 'Led development of enterprise healthcare solutions and mentored junior developers.',
+      period: 'Nov 2022 - Dec 2025',
+      description: 'Revamp of a POS software dashboard application (TONIC POS) using Angular and TypeScript, RxJS, NgRx for state management and integrating Chart.js, D3.js and contributed as a team player in developing an enterprise-grade payroll processing software called Smart Time Fenix, leading to a 30% reduction in payroll processing time and increased customer satisfaction.',
       responsibilities: [
-        'Architected and developed scalable web applications using React and TypeScript',
-        'Collaborated with cross-functional teams to deliver high-quality features',
-        'Implemented CI/CD pipelines and improved deployment processes',
-        'Conducted code reviews and established best practices',
+        'Boosted application performance by 30% by using SVG sprites for icon management, ensuring accessibility and scalability.',
+        'Conducted code reviews and maintained 75%+ unit test coverage using Jest, ensuring quality and stability as part of the Test-Driven Development (TDD) process.',
+        'Worked closely with UI/UX designers to ensure design specifications were met and to create a seamless, user-friendly interface and WCAG-compliant components, using Figma for design collaboration.',
+        'Mentored junior developers, providing technical guidance, best practices in Angular, TypeScript, and state management, fostering growth and knowledge-sharing across the team.',
+        'Integrated Java Spring Boot RESTful APIs through a Node.js and Express middleware layer, maintaining over 75% unit test coverage with Mocha and Chai.',
+        'Implemented key technology solutions for product expansion into the UK entertainment industry, contributing to a 40% growth in international market presence and a strengthened competitive position for the company.',
+        'Implemented object-oriented programming in TypeScript with the InversifyJS package in Node.js to achieve Inversion of Control through the dependency injection design pattern.'
       ],
-      skills: ['React', 'TypeScript', 'Node.js', 'AWS', 'PostgreSQL', 'Docker'],
+      skills: ['Angular', 'TypeScript', 'NgRx', 'RxJS', 'Jest', 'Mocha', 'Chai', 'Node.JS', 'Express', 'Inversify', 'Bootstrap', 'Angular Material', 'SVG sprite', 'D3.js', 'Chart.js'],
     },
     {
       id: 2,
       company: 'Cognizant Technology Solutions',
       role: 'Front End Developer',
       period: 'Dec 2019 - Oct 2022',
-      description: 'Developed responsive web applications for enterprise clients in various industries.',
+      description: 'Developed a user-friendly mobile and web app using Angular with Ionic for Aetna Quote and Enroll, leading to a 20% increase in mobile enrollment and better accessibility for customers, resulting in improved user engagement and customer retention.',
       responsibilities: [
-        'Built and maintained complex user interfaces using React and Vue.js',
-        'Optimized application performance and improved user experience',
-        'Worked closely with UX designers to implement pixel-perfect designs',
-        'Participated in Agile ceremonies and sprint planning',
+        'Achieved a 7/10 web accessibility score by diligently following accessibility best practices, leading to better SEO, increased user satisfaction and improved brand reputation.',
+        'Analysed and enhanced accessibility standards by leveraging testing tools like Axe, Wave, Google Lighthouse, and NVDA screen reader, leading to a 70% improvement in website accessibility. This positively impacted user satisfaction and brand reputation. ',
+        'Utilised Chart.JS and D3 to transform Java API data into dynamic charts, tables, and visualisations, enriching the user experience and supporting informed decision-making for the business.',
+        'Collaborated with DevOps in building the CI/CD pipeline for Ionic code repository for iOS and android builds.'
       ],
-      skills: ['React', 'Vue.js', 'JavaScript', 'CSS3', 'REST APIs', 'Git'],
+      skills: ['Angular', 'TypeScript', 'NgRx', 'RxJS', 'Jest', 'Bootstrap', 'Angular Material', 'SEO', 'WCAG', 'Ionic', 'Chart.js'],
     },
   ];
 
   const allSkills = [
     // Frontend
-    'React', 'TypeScript', 'JavaScript', 'Vue.js', 'Next.js', 'HTML5', 'CSS3', 'Tailwind CSS',
-    'Redux', 'React Query', 'Styled Components',
+    'Angular', 'React', 'TypeScript', 'JavaScript', 'Ionic', 'Bootstrap', 'Angular Material', 'Chart.js', 'D3.js', 'Next.js', 'HTML5', 'CSS3', 'Tailwind CSS',
+    'NgRx', 'RxJS',
     // Backend
-    'Node.js', 'Express', 'Python', 'REST API', 'GraphQL',
+    'Node.js', 'Express', 'REST API', 'Firebase', 'Firestore',
     // Database
-    'PostgreSQL', 'MongoDB', 'Redis', 'MySQL',
+    'MongoDB', 'MySQL',
     // DevOps & Tools
-    'AWS', 'Docker', 'Git', 'CI/CD', 'Jenkins', 'Kubernetes',
+    'AWS', 'Git', 'CI/CD', 'Jenkins', 'Jira', 'Splunk', 'Spinnaker',
     // Others
-    'Agile', 'Scrum', 'Jest', 'Testing Library', 'Webpack', 'Vite',
+    'Agile', 'Scrum', 'Jest', 'Mocha', 'Chai', 'Jasmine', 'Karma', 'Webpack', 'Vite',
   ];
 
   return (

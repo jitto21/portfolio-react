@@ -1,3 +1,5 @@
+import protfolioImg from '../../src/assets/portfolio-dp.jpg';
+
 const About = () => {
   const experiences = [
     { role: 'Senior Software Engineer', company: 'at Vrize', period: 'Nov 2022 - Dec 2025' },
@@ -17,15 +19,14 @@ const About = () => {
                 </h2>
                 <div className="space-y-4 text-warm-textLight text-base leading-relaxed">
                   <p>
-                    I'm a front end developer, podcaster, creator, and rocket league driver.
-                    I'm currently building small companies out at <span className="font-semibold text-warm-text">SparkBox Agency</span>.
+                    I'm a highly skilled web developer with a strong technical foundation in Angular, Redux, TypeScript, and a range of other technologies.
+                    I'm currently working as a <span className="font-semibold text-warm-text">Senior Software Engineer</span> in <span className="font-semibold text-warm-text">Vrize</span>.
                   </p>
                   <p>
-                    In terms of some more things I enjoy, sometimes I like to go hiking and I let my
-                    trails that I explore on all trails.
+                    In terms of some more things I enjoy, I like to travel and watch sports (mostly football)
                   </p>
                   <p>
-                    Alongside that, here and there I compete within some driving games and stuff like that.
+                    Alongside that, here and there I play some console games and stuff like that.
                   </p>
                 </div>
               </div>
@@ -54,8 +55,7 @@ const About = () => {
                   {/* Placeholder for image - replace with actual image */}
                   <div className="w-full h-full flex items-center justify-center">
                     <div className="text-center">
-                      <div className="text-6xl mb-4">👨‍💻</div>
-                      <img src="src/assets/portfolio-dp.jpg" alt="profile" />
+                      <img src={protfolioImg} alt="profile" />
                     </div>
                   </div>
                 </div>

@@ -1,8 +1,15 @@
 import { useState } from 'react';
+import quotesOnTheGoImg from '../assets/quotes-on-the-go.webp';
+import cvsHealthImg from '../assets/cvs-health-logo.webp';
+import tonicPosImg from '../assets/tonic-pos-logo.webp';
+import epImg from '../assets/entertainment-partners-logo.webp';
+import aetnaImg from '../assets/aetna-logo.webp';
 
 interface Project {
   id: number;
   title: string;
+  client?: string;
+  image?: string;
   description: string;
   period: string;
   category: string;
@@ -20,19 +27,23 @@ const Projects = () => {
     // Work Projects
     {
       id: 1,
-      title: 'Healthcare Management System',
+      title: 'TONIC Back of House',
+      client: 'TONIC',
+      image: tonicPosImg,
       description: 'Developed a comprehensive healthcare management platform that streamlines patient records, appointment scheduling, and medical billing. Implemented role-based access control and HIPAA-compliant data handling. The system reduced administrative overhead by 40% and improved patient satisfaction scores.',
-      period: 'Oct 2022 - Nov 2023',
-      category: 'Healthcare',
+      period: 'July 2024 - Dec 2025',
+      category: 'Hospitality',
       technologies: ['React', 'Node.js', 'PostgreSQL', 'AWS'],
       liveLink: 'https://example.com',
       type: 'work',
     },
     {
       id: 2,
-      title: 'Entertainment Streaming Platform',
+      title: 'Smart Time Fenix',
+      client: 'Entertainment Partners',
+      image: epImg,
       description: 'Built a scalable streaming platform supporting 100K+ concurrent users with adaptive bitrate streaming, real-time analytics, and personalized content recommendations. Integrated payment gateways and subscription management systems.',
-      period: 'Jan 2023 - Aug 2023',
+      period: 'Nov 2022 - June 2024',
       category: 'Entertainment',
       technologies: ['React', 'TypeScript', 'Redis', 'CDN'],
       liveLink: 'https://example.com',
@@ -40,17 +51,41 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: 'Hotel Booking & Management',
+      title: 'Quotes on the go',
+      client: 'Aetna',
+      image: quotesOnTheGoImg,
       description: 'Created an end-to-end hotel management solution with booking engine, inventory management, and guest services portal. Features include dynamic pricing, multi-property support, and integrated POS system.',
-      period: 'Dec 2021 - Mar 2022',
-      category: 'Hospitality',
+      period: 'Mar 2022 - Oct 2022',
+      category: 'Financial',
       technologies: ['Vue.js', 'Express', 'MongoDB', 'Stripe'],
+      type: 'work',
+    },
+    {
+      id: 4,
+      title: 'Aetna Quote & Enroll',
+      client: 'Aetna',
+      image: aetnaImg,
+      description: 'Created an end-to-end hotel management solution with booking engine, inventory management, and guest services portal. Features include dynamic pricing, multi-property support, and integrated POS system.',
+      period: 'Dec 2020 - Feb 2022',
+      category: 'Financial',
+      technologies: ['Vue.js', 'Express', 'MongoDB', 'Stripe'],
+      type: 'work',
+    },
+    {
+      id: 5,
+      title: 'CVS Dashboard',
+      client: 'CVS Health',
+      image: cvsHealthImg,
+      description: 'Created an end-to-end hotel management solution with booking engine, inventory management, and guest services portal. Features include dynamic pricing, multi-property support, and integrated POS system.',
+      period: 'Dec 2019 - Nov 2020',
+      category: 'Financial',
+      technologies: ['Angular', 'Chart.js', 'Angular Material', 'Bootstrap'],
       type: 'work',
     },
 
     // Personal Projects
     {
-      id: 4,
+      id: 6,
       title: 'Portfolio Website',
       description: 'Designed and developed a modern, responsive portfolio website showcasing my work and skills. Built with React and TypeScript, featuring smooth animations, dark mode, and optimized performance.',
       period: 'Nov 2024 - Dec 2024',
@@ -61,7 +96,7 @@ const Projects = () => {
       type: 'personal',
     },
     {
-      id: 5,
+      id: 7,
       title: 'Task Manager App',
       description: 'A minimalist task management application with drag-and-drop functionality, priority levels, and due date reminders. Includes offline support using service workers and local storage.',
       period: 'Jun 2024 - Jul 2024',
@@ -71,7 +106,7 @@ const Projects = () => {
       type: 'personal',
     },
     {
-      id: 6,
+      id: 8,
       title: 'Weather Dashboard',
       description: 'Interactive weather application with real-time data, 7-day forecasts, and location-based alerts. Features beautiful visualizations and responsive design for mobile and desktop.',
       period: 'Mar 2024 - Apr 2024',
@@ -84,6 +119,7 @@ const Projects = () => {
   ];
 
   const filteredProjects = projects.filter(project => project.type === activeTab);
+  console.log(filteredProjects);
 
   const toggleDescription = (projectId: number) => {
     setExpandedProject(expandedProject === projectId ? null : projectId);
@@ -135,11 +171,21 @@ const Projects = () => {
               className="bg-warm-card rounded-2xl overflow-hidden card-shadow hover:shadow-xl transition-all duration-300 animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Project thumbnail placeholder */}
-              <div className="w-full h-48 bg-gradient-to-br from-cream-100 to-cream-200 flex items-center justify-center">
-                <span className="text-5xl">
-                  {project.type === 'work' ? '💼' : '🎨'}
-                </span>
+              {/* Project thumbnail */}
+              <div className="w-full h-48 p-8 overflow-hidden">
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-contain transition-transform duration-300 hover:scale-105"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-cream-100 to-cream-200 flex items-center justify-center">
+                    <span className="text-5xl">
+                      {project.type === 'work' ? '💼' : '🎨'}
+                    </span>
+                  </div>
+                )}
               </div>
 
               <div className="p-6 space-y-4">
