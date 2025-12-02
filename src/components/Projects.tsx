@@ -4,6 +4,9 @@ import cvsHealthImg from '../assets/cvs-health-logo.webp';
 import tonicPosImg from '../assets/tonic-pos-logo.webp';
 import epImg from '../assets/entertainment-partners-logo.webp';
 import aetnaImg from '../assets/aetna-logo.webp';
+import locationFinderImg from '../assets/location-finder-logo.webp';
+import angularImg from '../assets/angular-logo.webp';
+import nextJsImg from '../assets/nextjs-logo.webp';
 
 interface Project {
   id: number;
@@ -30,11 +33,10 @@ const Projects = () => {
       title: 'TONIC Back of House',
       client: 'TONIC',
       image: tonicPosImg,
-      description: 'Developed a comprehensive healthcare management platform that streamlines patient records, appointment scheduling, and medical billing. Implemented role-based access control and HIPAA-compliant data handling. The system reduced administrative overhead by 40% and improved patient satisfaction scores.',
+      description: 'A POS software dashboard application (TONIC POS) developed using Angular and TypeScript, RxJS, NgRx for state management and integrating Chart.js, D3.js for enhanced data visualization and decision-making.',
       period: 'July 2024 - Dec 2025',
       category: 'Hospitality',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'AWS'],
-      liveLink: 'https://example.com',
+      technologies: ['Angular', 'NgRx', 'RxJS', 'Chart.js', 'D3.js', 'Angular Material', 'Bootstrap', 'Jest'],
       type: 'work',
     },
     {
@@ -42,11 +44,10 @@ const Projects = () => {
       title: 'Smart Time Fenix',
       client: 'Entertainment Partners',
       image: epImg,
-      description: 'Built a scalable streaming platform supporting 100K+ concurrent users with adaptive bitrate streaming, real-time analytics, and personalized content recommendations. Integrated payment gateways and subscription management systems.',
+      description: 'An enterprise-grade payroll processing software called Smart Time Fenix built using Angular and TypeScript, RxJS, NgRx for state management in the front-end, Node.JS and Express with inversify.js to achieve IOC using Dependency injection as the middleware and Java Spring Boot as the backend. Redis and MySQL as databases',
       period: 'Nov 2022 - June 2024',
       category: 'Entertainment',
       technologies: ['React', 'TypeScript', 'Redis', 'CDN'],
-      liveLink: 'https://example.com',
       type: 'work',
     },
     {
@@ -54,10 +55,11 @@ const Projects = () => {
       title: 'Quotes on the go',
       client: 'Aetna',
       image: quotesOnTheGoImg,
-      description: 'Created an end-to-end hotel management solution with booking engine, inventory management, and guest services portal. Features include dynamic pricing, multi-property support, and integrated POS system.',
+      description: 'This is a native mobile application available in iOS and Android built using Ionic with Angular to help the agents with calculating insurance quotes on the go',
       period: 'Mar 2022 - Oct 2022',
       category: 'Financial',
-      technologies: ['Vue.js', 'Express', 'MongoDB', 'Stripe'],
+      liveLink: 'https://play.google.com/store/apps/details?id=com.aetna.ssieappmobile&hl=en_IN',
+      technologies: ['Ionic', 'Angular', 'Typescript', 'Angular Material', 'Bootstrap'],
       type: 'work',
     },
     {
@@ -65,10 +67,10 @@ const Projects = () => {
       title: 'Aetna Quote & Enroll',
       client: 'Aetna',
       image: aetnaImg,
-      description: 'Created an end-to-end hotel management solution with booking engine, inventory management, and guest services portal. Features include dynamic pricing, multi-property support, and integrated POS system.',
+      description: 'This is a web application built using Angular to quote and enroll various insurance products.',
       period: 'Dec 2020 - Feb 2022',
       category: 'Financial',
-      technologies: ['Vue.js', 'Express', 'MongoDB', 'Stripe'],
+      technologies: ['Angular', 'Angular Material', 'Bootstrap'],
       type: 'work',
     },
     {
@@ -76,7 +78,7 @@ const Projects = () => {
       title: 'CVS Dashboard',
       client: 'CVS Health',
       image: cvsHealthImg,
-      description: 'Created an end-to-end hotel management solution with booking engine, inventory management, and guest services portal. Features include dynamic pricing, multi-property support, and integrated POS system.',
+      description: 'This is a web application built using Angular to visualize data in tables and charts for processed or failed claims and other data.',
       period: 'Dec 2019 - Nov 2020',
       category: 'Financial',
       technologies: ['Angular', 'Chart.js', 'Angular Material', 'Bootstrap'],
@@ -85,41 +87,43 @@ const Projects = () => {
 
     // Personal Projects
     {
-      id: 6,
-      title: 'Portfolio Website',
-      description: 'Designed and developed a modern, responsive portfolio website showcasing my work and skills. Built with React and TypeScript, featuring smooth animations, dark mode, and optimized performance.',
-      period: 'Nov 2024 - Dec 2024',
-      category: 'Web Development',
-      technologies: ['React', 'TypeScript', 'Tailwind CSS'],
-      githubLink: 'https://github.com/yourusername/portfolio',
-      liveLink: 'https://yourportfolio.com',
+      id: 7,
+      title: 'E-directory application',
+      description: 'Developed a Next.js-based e-directory application with a Firebase, Firestore backend integrated with India Post Digicode, advanced member filters, and features like event notifications and a shared calendar for birthdays, anniversaries, and invitations.',
+      period: 'May 2025 - Aug 2025',
+      category: 'Productivity',
+      image: nextJsImg,
+      technologies: ['React', 'Next.JS', 'Firebase', 'Firestore', 'Firebase Authentication', 'Supabase'],
+      liveLink: 'https://www.palathra.in/',
+      githubLink: 'https://github.com/jitto21/palathra-app',
       type: 'personal',
     },
     {
-      id: 7,
-      title: 'Task Manager App',
-      description: 'A minimalist task management application with drag-and-drop functionality, priority levels, and due date reminders. Includes offline support using service workers and local storage.',
-      period: 'Jun 2024 - Jul 2024',
-      category: 'Productivity',
-      technologies: ['React', 'Firebase', 'PWA'],
-      githubLink: 'https://github.com/yourusername/task-manager',
+      id: 6,
+      title: 'Angular Custom Input',
+      description: 'Input field that masks the last characters entered by the user. Masks on blur and retains the original value on focus of the input field',
+      period: 'Jan 2023',
+      image: angularImg,
+      category: 'NPM Package',
+      technologies: ['Angular', 'TypeScript', 'Angular Material'],
+      liveLink: 'https://www.npmjs.com/package/custom-input-lib-jtp',
       type: 'personal',
     },
     {
       id: 8,
-      title: 'Weather Dashboard',
-      description: 'Interactive weather application with real-time data, 7-day forecasts, and location-based alerts. Features beautiful visualizations and responsive design for mobile and desktop.',
-      period: 'Mar 2024 - Apr 2024',
-      category: 'Web App',
-      technologies: ['React', 'OpenWeather API', 'Chart.js'],
-      githubLink: 'https://github.com/yourusername/weather-app',
-      liveLink: 'https://weather.yoursite.com',
+      title: 'Location Finder',
+      description: 'This Angular application enables users to input longitude and latitude coordinates and displays a precise pinpoint marker on an interactive map powered by the Leaflet library.',
+      period: 'Sept 2022',
+      category: 'Productivity',
+      image: locationFinderImg,
+      technologies: ['Angular', 'TypeScript', 'Angular Material', 'leaflet'],
+      githubLink: 'https://github.com/jitto21/radiXplore',
+      liveLink: 'https://radi-explore.netlify.app/',
       type: 'personal',
     },
   ];
 
   const filteredProjects = projects.filter(project => project.type === activeTab);
-  console.log(filteredProjects);
 
   const toggleDescription = (projectId: number) => {
     setExpandedProject(expandedProject === projectId ? null : projectId);
