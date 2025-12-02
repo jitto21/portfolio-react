@@ -25,9 +25,6 @@ const About = () => {
                   <p>
                     In terms of some more things I enjoy, I like to travel and watch sports (mostly football)
                   </p>
-                  <p>
-                    Alongside that, here and there I play some console games and stuff like that.
-                  </p>
                 </div>
               </div>
 
