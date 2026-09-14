@@ -1,4 +1,8 @@
+import { buttonEventHandler } from "../utils/event.util";
+
 const Hero = () => {
+  const page = 'Hero';
+  const handleEvent = buttonEventHandler();
   return (
     <section
       id="home"
@@ -31,6 +35,7 @@ const Hero = () => {
                 onClick={() => {
                   const element = document.getElementById('contact');
                   element?.scrollIntoView({ behavior: 'smooth' });
+                  handleEvent(page, 'Say Hello');
                 }}
                 className="px-12 py-4 bg-warm-text text-warm-card rounded-lg hover:bg-cream-800 transition-all duration-300 font-medium text-base shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
               >

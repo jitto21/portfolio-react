@@ -1,4 +1,8 @@
+import { buttonEventHandler } from "../utils/event.util";
+
 const Contact = () => {
+  const page = 'About';
+  const handleEvent = buttonEventHandler();
   return (
     <section id="contact" className="min-h-screen flex items-center py-24 px-6">
       <div className="max-w-4xl mx-auto w-full">
@@ -41,6 +45,7 @@ const Contact = () => {
               href="mailto:jittotp@gmail.com"
               className="group flex flex-col items-center gap-3 transition-all duration-300 hover:-translate-y-1"
               title="Send me an email"
+              onClick={() => handleEvent(page, 'Email')}
             >
               <div className="p-4 rounded-full bg-cream-100 group-hover:bg-cream-200 transition-colors duration-300">
                 <svg
@@ -69,6 +74,7 @@ const Contact = () => {
               rel="noopener noreferrer"
               className="group flex flex-col items-center gap-3 transition-all duration-300 hover:-translate-y-1"
               title="Connect on LinkedIn"
+              onClick={() => handleEvent(page, 'LinkedIn')}
             >
               <div className="p-4 rounded-full bg-cream-100 group-hover:bg-cream-200 transition-colors duration-300">
                 <svg
@@ -93,6 +99,7 @@ const Contact = () => {
               rel="noopener noreferrer"
               className="group flex flex-col items-center gap-3 transition-all duration-300 hover:-translate-y-1"
               title="View my code on GitHub"
+              onClick={() => handleEvent(page, 'GitHub')}
             >
               <div className="p-4 rounded-full bg-cream-100 group-hover:bg-cream-200 transition-colors duration-300">
                 <svg
