@@ -12,6 +12,21 @@ const Experience = () => {
   const workExperiences: WorkExperience[] = [
     {
       id: 1,
+      company: 'Foster + Partners',
+      role: 'Senior Developer',
+      period: 'April 2026 - Present',
+      description: 'Own and develop multiple public-facing websites and internal services, including microservices supporting employee, project and other business operations. Respond to support tickets, troubleshoot issues, and implement timely solutions.',
+      responsibilities: [
+        'Own development and maintenance of the Foster + Partners corporate public website.',
+        'Build and maintain Umbraco (headless CMS) integrations, consuming content APIs into a decoupled front end so the editorial team can ship changes without engineering bottlenecks.',
+        'Work in .NET Core on the API layer - designing endpoints and coordinating changes with the wider platform team.',
+        'Use Hotjar analytics to understand real user behavior on the site and inform UX and performance improvements.',
+        'Deliver in a disciplined Agile process using Azure DevOps for boards, backlog, sprints, and pull request workflow.',
+      ],
+      skills: ['Angular', 'TypeScript', 'Content Management Systems (CMS)', 'Umbraco', '.Net', 'ASP.NET', 'Entity Framework Core', 'Bootstrap', 'Azure Functions', 'Azure DevOps', 'OAuth2.0', 'Aikido', 'SQL', 'Databricks'],
+    },
+    {
+      id: 2,
       company: 'Vrize',
       role: 'Senior Software Engineer',
       period: 'Nov 2022 - Dec 2025',
@@ -28,7 +43,7 @@ const Experience = () => {
       skills: ['Angular', 'TypeScript', 'NgRx', 'RxJS', 'Jest', 'Mocha', 'Chai', 'Node.JS', 'Express', 'Inversify', 'Bootstrap', 'Angular Material', 'SVG sprite', 'D3.js', 'Chart.js'],
     },
     {
-      id: 2,
+      id: 3,
       company: 'Cognizant Technology Solutions',
       role: 'Front End Developer',
       period: 'Dec 2019 - Oct 2022',
@@ -48,13 +63,13 @@ const Experience = () => {
     'Angular', 'React', 'TypeScript', 'JavaScript', 'Ionic', 'Bootstrap', 'Angular Material', 'Chart.js', 'D3.js', 'Next.js', 'HTML5', 'CSS3', 'Tailwind CSS',
     'NgRx', 'RxJS',
     // Backend
-    'Node.js', 'Express', 'REST API', 'Firebase', 'Firestore',
+    'Node.js', 'Express', 'REST API', 'Firebase', 'Firestore', 'Content Management Systems (CMS)', 'Umbraco', '.Net', 'ASP.NET', 'Entity Framework Core', 'Azure Functions', 'Aikido',
     // Database
     'MongoDB', 'MySQL',
     // DevOps & Tools
-    'AWS', 'Git', 'CI/CD', 'Jenkins', 'Jira', 'Splunk', 'Spinnaker',
+    'AWS', 'Git', 'CI/CD', 'Jenkins', 'Jira', 'Splunk', 'Spinnaker', 'Azure DevOps', 'Databricks',
     // Others
-    'Agile', 'Scrum', 'Jest', 'Mocha', 'Chai', 'Jasmine', 'Karma', 'Webpack', 'Vite',
+    'OAuth2.0', 'Agile', 'Scrum', 'Jest', 'Mocha', 'Chai', 'Jasmine', 'Karma', 'Webpack', 'Vite',
   ];
 
   return (

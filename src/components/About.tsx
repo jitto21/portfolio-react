@@ -2,6 +2,7 @@ import protfolioImg from '../../src/assets/portfolio-dp.jpg';
 
 const About = () => {
   const experiences = [
+    { role: 'Senior Developer', company: 'at Foster + Partners', period: 'April 2026 - Present' },
     { role: 'Senior Software Engineer', company: 'at Vrize', period: 'Nov 2022 - Dec 2025' },
     { role: 'Front end developer', company: 'at Cognizant Technology Solutions', period: 'Dec 2019 - Oct 2022' },
   ];
